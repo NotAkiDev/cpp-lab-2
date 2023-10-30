@@ -23,7 +23,20 @@ long tween_factorial(long stop) {
     return summator;
 }
 
-double t(double x) {}
+double t(double x) {
+    double numerator = 0;
+    double denominator = 0;
+
+    for (int i = 0; i < 11; i++) {
+        numerator += pow(x, 2 * i + 1) / tween_factorial(2 * i + 1);
+    }
+
+    for (int i = 0; i < 11; i++) {
+        denominator += pow(x, 2 * i) / tween_factorial(2 * i);
+    }
+
+    return numerator / denominator;
+}
 
 double total_answer(double y) {
     return (7 * t(0.25) + 2 * t(1 + y)) / (6 - t(pow(y, 2) - 1));
@@ -33,6 +46,6 @@ double total_answer(double y) {
 int main() {
     double num = 0;
     cin >> num;
-    cout << total_answer(num);
+    cout << total_answer(num) << "\n";
     return 0;
 }
