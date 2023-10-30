@@ -3,7 +3,7 @@ using namespace std;
 
 double pow(double num, int power) {
     double to_return = 1;
-    for (int i = 0; i < power; i++)
+    for (int i = 0; i < power; ++i)
         to_return *= num;
     return to_return;
 }
@@ -27,11 +27,11 @@ double t(double x) {
     double numerator = 0;
     double denominator = 0;
 
-    for (int i = 0; i < 11; i++) {
+    for (int i = 0; i < 11; ++i) {
         numerator += pow(x, 2 * i + 1) / tween_factorial(2 * i + 1);
     }
 
-    for (int i = 0; i < 11; i++) {
+    for (int i = 0; i < 11; ++i) {
         denominator += pow(x, 2 * i) / tween_factorial(2 * i);
     }
 
